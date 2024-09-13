@@ -1,4 +1,4 @@
 package com.encuentraya.professionals.services.professional;
 
-public class ProfessionalCategory {
+public class ProfessionalService {
 }

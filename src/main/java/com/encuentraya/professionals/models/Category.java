@@ -6,10 +6,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Entity @Getter
+@Entity 
+@Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
@@ -18,12 +20,13 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    @Column(nullable = false, unique = true)
     private String name;
     
-    @ManyToMany(mappedBy = "categories")
-    private Set<Professional> professionals;
+    @ManyToMany(mappedBy = "category")
+    private Set<Professional> professionals = new HashSet<>();
     
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<SubCategory> subcategories;
+    private Set<SubCategory> subcategories;
 }
 

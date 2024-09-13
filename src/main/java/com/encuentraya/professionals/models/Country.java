@@ -6,26 +6,22 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class SubCategory {
+public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
     @Column(nullable = false, unique = true)
     private String name;
-    
-    @ManyToOne
-    @JoinColumn(name = "category_id")
-    private Category category;
 
-    @ManyToMany(mappedBy = "subcategory")
-    private Set<Professional> professionals = new HashSet<>();
+    @OneToMany(mappedBy = "country")
+    private List<Professional> professionals = new ArrayList<>();
 }
