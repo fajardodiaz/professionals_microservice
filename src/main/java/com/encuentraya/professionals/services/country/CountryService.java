@@ -1,10 +1,13 @@
 package com.encuentraya.professionals.services.country;
 
 import com.encuentraya.professionals.models.Country;
+import com.encuentraya.professionals.repository.CountryRepository;
 
 import java.util.List;
 
 public class CountryService implements ICountryService {
+    private CountryRepository countryRepository;
+    
     @Override
     public Country getCountryById(Long id) {
         return null;

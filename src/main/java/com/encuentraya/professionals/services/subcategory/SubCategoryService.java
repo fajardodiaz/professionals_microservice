@@ -2,10 +2,13 @@ package com.encuentraya.professionals.services.subcategory;
 
 import com.encuentraya.professionals.models.Category;
 import com.encuentraya.professionals.models.SubCategory;
+import com.encuentraya.professionals.repository.SubCategoryRepository;
 
 import java.util.List;
 
 public class SubCategoryService implements ISubCategoryService {
+    private SubCategoryRepository subCategoryRepository;
+    
     @Override
     public SubCategory addSubCategory(SubCategory subCategory) {
         return null;

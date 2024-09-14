@@ -1,0 +1,31 @@
+services:
+  server:
+    build:
+      context: .
+      target: development
+    ports:
+      - 8080:8080
+      - 8000:8000
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - POSTGRES_URL=jdbc:postgresql://db:5432/professionaldb
+  db:
+    image: postgres:12-alpine
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=professionaldb
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=eCIVim2aF4BgzS6wKejE
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "postgres" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+volumes:
+  db-data:

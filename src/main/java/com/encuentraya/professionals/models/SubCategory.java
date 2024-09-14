@@ -14,6 +14,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "subcategory")
 public class SubCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +27,6 @@ public class SubCategory {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    @ManyToMany(mappedBy = "subcategory")
+    @ManyToMany(mappedBy = "subcategories")
     private Set<Professional> professionals = new HashSet<>();
 }

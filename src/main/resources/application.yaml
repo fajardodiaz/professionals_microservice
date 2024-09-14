@@ -2,7 +2,7 @@ spring:
   application:
     name: professionals
   datasource:
-    url: jdbc:postgresql://postgres-database-java.czuu6a2sg3u3.us-east-1.rds.amazonaws.com:5432/professionaldb?user=postgres&password=eCIVim2aF4BgzS6wKejE
+    url: jdbc:postgresql://db:5432/professionaldb?user=postgres&password=eCIVim2aF4BgzS6wKejE
     username: postgres
     password: eCIVim2aF4BgzS6wKejE
     driver-class-name: org.postgresql.Driver

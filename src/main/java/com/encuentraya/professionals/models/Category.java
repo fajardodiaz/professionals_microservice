@@ -23,7 +23,7 @@ public class Category {
     @Column(nullable = false, unique = true)
     private String name;
     
-    @ManyToMany(mappedBy = "category")
+    @ManyToMany(mappedBy = "categories")
     private Set<Professional> professionals = new HashSet<>();
     
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
