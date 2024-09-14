@@ -1,10 +1,7 @@
 package com.encuentraya.professionals.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.List;
@@ -28,5 +25,9 @@ public class Category {
     
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<SubCategory> subcategories;
+    
+    public Category(String name) {
+        this.name = name;
+    }
 }
 
