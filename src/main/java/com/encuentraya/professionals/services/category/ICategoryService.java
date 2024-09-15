@@ -10,6 +10,7 @@ public interface ICategoryService {
     Category addCategory(Category category);
     List<Category> getAllCategories();
     Category getCategoryById(long id);
+    Category getCategoryByName(String name);
     void deleteCategoryById(long id);
     Category updateCategory(Category category, long id);
 }

@@ -5,10 +5,10 @@ import com.encuentraya.professionals.models.Country;
 import java.util.List;
 
 public interface ICountryService {
+    List<Country> getAllCountries();
     Country getCountryById(Long id);
     Country getCountryByName(String name);
-    List<Country> getAllCountries();
     Country addCountry(Country country);
-    Country updateCountry(Country country);
+    Country updateCountry(Country country, Long id);
     void deleteCountry(Long id);
 }
