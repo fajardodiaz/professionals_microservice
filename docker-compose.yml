@@ -19,7 +19,7 @@ services:
     environment:
       - POSTGRES_DB=professionaldb
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=eCIVim2aF4BgzS6wKejE
+      - POSTGRES_PASSWORD=postgres
     ports:
       - 5432:5432
     healthcheck:
