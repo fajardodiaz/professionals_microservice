@@ -31,6 +31,11 @@ public class ProfessionalService implements IProfessionalService {
     }
 
     @Override
+    public List<Professional> getProfessionalsByCategoryAndSubcategory(Long categoryId, Long subCategoryId) {
+        return List.of();
+    }
+
+    @Override
     public Professional addProfessional(Professional professional) {
         return null;
     }

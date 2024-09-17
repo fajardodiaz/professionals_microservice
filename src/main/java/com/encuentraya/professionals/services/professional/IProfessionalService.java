@@ -11,6 +11,7 @@ public interface IProfessionalService {
     List<Professional> getAllProfessionals();
     List<Professional> getProfessionalsByCategory(Long categoryId);
     List<Professional> getProfessionalsBySubCategory(Long subCategoryId);
+    List<Professional> getProfessionalsByCategoryAndSubcategory(Long categoryId, Long subCategoryId);
     Professional addProfessional(Professional professional);
     Professional updateProfessional(Professional professional);
     void deleteProfessional(Long id);
