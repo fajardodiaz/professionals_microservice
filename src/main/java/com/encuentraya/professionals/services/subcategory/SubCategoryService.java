@@ -23,33 +23,33 @@ public class SubCategoryService implements ISubCategoryService {
     }
 
     @Override
-    public List<SubCategory> getSubCategoriesByCategory(Category category) {
-        return subCategoryRepository.findByCategory(category);
+    public List<SubCategory> getSubCategoriesByCategory(String category) {
+        return subCategoryRepository.findByCategoryName(category);
     }
 
     @Override
-    public SubCategory getSubCategoryById(long id) {
+    public SubCategory getSubCategoryById(Long id) {
         return subCategoryRepository.findById(id)
-                .orElseThrow(()-> new ObjectNotFoundException("SubCategory Not Found"));
+                .orElseThrow(() -> new ObjectNotFoundException("SubCategory Not Found"));
     }
 
     @Override
     public SubCategory addSubCategory(SubCategory subCategory) {
         return Optional.of(subCategory).filter(s -> !subCategoryRepository.existsByName(s.getName()))
-                .map(subCategoryRepository :: save)
-                .orElseThrow(()-> new AlreadyExistsException(subCategory.getName() + " already exists"));
+                .map(subCategoryRepository::save)
+                .orElseThrow(() -> new AlreadyExistsException(subCategory.getName() + " already exists"));
     }
 
     @Override
     public SubCategory updateSubCategory(SubCategory subCategory, long id) {
-        return Optional.ofNullable(getSubCategoryById(id)).map(oldSubCategory ->{
+        return Optional.ofNullable(getSubCategoryById(id)).map(oldSubCategory -> {
             oldSubCategory.setName(subCategory.getName());
             return subCategoryRepository.save(oldSubCategory);
-        }).orElseThrow(()-> new ObjectNotFoundException("SubCategory Not Found"));
+        }).orElseThrow(() -> new ObjectNotFoundException("SubCategory Not Found"));
     }
 
     @Override
-    public void deleteSubCategoryById(long id) {
+    public void deleteSubCategoryById(Long id) {
         subCategoryRepository.findById(id).ifPresentOrElse(subCategoryRepository::delete, () -> {
             throw new ObjectNotFoundException("SubCategory Not Found");
         });

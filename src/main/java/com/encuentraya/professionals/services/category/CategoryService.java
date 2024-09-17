@@ -28,7 +28,7 @@ public class CategoryService implements ICategoryService {
     }
     
     @Override
-    public Category getCategoryById(long id) {
+    public Category getCategoryById(Long id) {
         return categoryRepository.findById(id).orElseThrow(()-> new ObjectNotFoundException("Category Not Found!"));
     }
 
@@ -38,14 +38,14 @@ public class CategoryService implements ICategoryService {
     }
 
     @Override
-    public void deleteCategoryById(long id) {
+    public void deleteCategoryById(Long id) {
         categoryRepository.findById(id).ifPresentOrElse(categoryRepository::delete,
                 ()-> {throw new ObjectNotFoundException("Category Not Found!");
         });
     }
     
     @Override
-    public Category updateCategory(Category category, long id) {
+    public Category updateCategory(Category category, Long id) {
         return Optional.ofNullable(getCategoryById(id)).map(oldCategory -> {
             oldCategory.setName(category.getName());
             return categoryRepository.save(oldCategory);

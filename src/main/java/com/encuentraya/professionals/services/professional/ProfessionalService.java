@@ -21,12 +21,12 @@ public class ProfessionalService implements IProfessionalService {
     }
 
     @Override
-    public List<Professional> getProfessionalsByCategory(Category category) {
+    public List<Professional> getProfessionalsByCategory(Long categoryId) {
         return List.of();
     }
 
     @Override
-    public List<Professional> getProfessionalsBySubCategory(SubCategory subCategory) {
+    public List<Professional> getProfessionalsBySubCategory(Long subCategoryId) {
         return List.of();
     }
 

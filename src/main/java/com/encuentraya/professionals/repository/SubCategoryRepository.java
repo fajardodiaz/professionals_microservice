@@ -9,7 +9,7 @@ import java.util.List;
 public interface SubCategoryRepository extends JpaRepository<SubCategory, Long> {
     SubCategory findByName(String name);
 
-    List<SubCategory> findByCategory(Category category);
+    List<SubCategory> findByCategoryName(String category);
 
     boolean existsByName(String name);
 }

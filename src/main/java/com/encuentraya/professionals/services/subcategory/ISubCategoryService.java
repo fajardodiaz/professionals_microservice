@@ -7,10 +7,16 @@ import java.util.List;
 
 public interface ISubCategoryService {
     List<SubCategory> getAllSubCategories();
+
+    List<SubCategory> getSubCategoriesByCategory(String category);
+
     SubCategory getSubCategorieByName(String name);
-    List<SubCategory> getSubCategoriesByCategory(Category category);
-    SubCategory getSubCategoryById(long id);
+
+    SubCategory getSubCategoryById(Long id);
+
     SubCategory addSubCategory(SubCategory subCategory);
+
     SubCategory updateSubCategory(SubCategory subCategory, long id);
-    void deleteSubCategoryById(long id);
+
+    void deleteSubCategoryById(Long id);
 }
