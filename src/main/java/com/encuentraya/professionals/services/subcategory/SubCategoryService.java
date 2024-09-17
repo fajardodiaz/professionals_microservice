@@ -41,7 +41,7 @@ public class SubCategoryService implements ISubCategoryService {
     }
 
     @Override
-    public SubCategory updateSubCategory(SubCategory subCategory, long id) {
+    public SubCategory updateSubCategory(SubCategory subCategory, Long id) {
         return Optional.ofNullable(getSubCategoryById(id)).map(oldSubCategory -> {
             oldSubCategory.setName(subCategory.getName());
             return subCategoryRepository.save(oldSubCategory);
