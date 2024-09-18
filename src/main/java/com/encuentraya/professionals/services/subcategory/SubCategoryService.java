@@ -5,10 +5,14 @@ import com.encuentraya.professionals.exceptions.ObjectNotFoundException;
 import com.encuentraya.professionals.models.Category;
 import com.encuentraya.professionals.models.SubCategory;
 import com.encuentraya.professionals.repository.SubCategoryRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@RequiredArgsConstructor
 public class SubCategoryService implements ISubCategoryService {
     private SubCategoryRepository subCategoryRepository;
 

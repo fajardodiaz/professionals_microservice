@@ -12,7 +12,6 @@ import java.util.Set;
 
 @Entity @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
 public class Professional {
     @Id
@@ -49,4 +48,14 @@ public class Professional {
             joinColumns = @JoinColumn(name = "professional_id"),
             inverseJoinColumns = @JoinColumn(name = "subcategory_id"))
     private Set<SubCategory> subcategories = new HashSet<>();
+
+    public Professional(String completeName, String countryUniqueID, Country country, String email, String phone, String address, double rating) {
+        this.completeName = completeName;
+        this.countryUniqueID = countryUniqueID;
+        this.country = country;
+        this.email = email;
+        this.phone = phone;
+        this.address = address;
+        this.rating = rating;
+    }
 }

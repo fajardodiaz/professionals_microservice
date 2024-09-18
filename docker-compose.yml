@@ -6,7 +6,7 @@ services:
     ports:
       - 8080:8080
       - 8000:8000
-    depends_on:
+    depends_on:s
       db:
         condition: service_healthy
     environment:

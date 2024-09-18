@@ -24,4 +24,8 @@ public class Country {
 
     @OneToMany(mappedBy = "country")
     private List<Professional> professionals = new ArrayList<>();
+
+    public Country(String name) {
+        this.name = name;
+    }
 }

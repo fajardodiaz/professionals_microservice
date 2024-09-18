@@ -4,10 +4,14 @@ import com.encuentraya.professionals.exceptions.AlreadyExistsException;
 import com.encuentraya.professionals.exceptions.ObjectNotFoundException;
 import com.encuentraya.professionals.models.Country;
 import com.encuentraya.professionals.repository.CountryRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
+@RequiredArgsConstructor
 public class CountryService implements ICountryService {
     private CountryRepository countryRepository;
 
