@@ -6,11 +6,15 @@ services:
     ports:
       - 8080:8080
       - 8000:8000
-    depends_on:s
+    depends_on:
       db:
         condition: service_healthy
     environment:
       - POSTGRES_URL=jdbc:postgresql://db:5432/professionaldb
+    develop:
+      watch:
+        - action: rebuild
+          path: .
   db:
     image: postgres:12-alpine
     restart: always

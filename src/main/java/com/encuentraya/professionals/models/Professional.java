@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -13,7 +14,7 @@ import java.util.Set;
 @Entity @Getter
 @Setter
 @NoArgsConstructor
-public class Professional {
+public class Professional  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -34,6 +35,12 @@ public class Professional {
     private String phone;
     private String address;
     private double rating;
+
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
+    @Column(insertable = false)
+    private LocalDateTime updateAt;
     
     @ManyToMany
     @JoinTable(

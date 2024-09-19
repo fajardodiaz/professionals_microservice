@@ -1,14 +1,10 @@
-package com.encuentraya.professionals.requests.professional;
+package com.encuentraya.professionals.dtos.professional;
 
-import com.encuentraya.professionals.models.Category;
 import com.encuentraya.professionals.models.Country;
-import com.encuentraya.professionals.models.SubCategory;
 import lombok.Data;
 
-import java.util.Set;
-
 @Data
-public class AddProfessionalRequest {
+public class AddProfessionalDto {
     private String completeName;
     private String countryUniqueID;
     private Country country;
